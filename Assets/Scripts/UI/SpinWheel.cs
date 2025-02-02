@@ -18,7 +18,6 @@ namespace UI
         private readonly float _wheelSize = 400f;
 
         private int _numberOfSegments;
-        private int _playerBalance;
 
         private List<int> _segmentValues = new List<int>();
         private List<Segment> _segments = new List<Segment>();
@@ -96,9 +95,7 @@ namespace UI
 
             Debug.Log($"Winning segment: {winningIndex}, Value: {_segments[winningIndex].GetValue()}");
 
-            _playerBalance += _segments[winningIndex].GetValue();
-
-            UpdateBalanceScore(_playerBalance);
+            UpdateBalanceScore(_segments[winningIndex].GetValue());
         }
 
         private void UpdateBalanceScore(int playerBalance)
